@@ -20,6 +20,11 @@ namespace Project_GMCD_ConsoleEdition
         private HtmlDocument Html;
 
         /// <summary>
+        /// Armazena o Xpath do Formulário
+        /// </summary>
+        private string XpathForm;
+
+        /// <summary>
         /// Armazena os Cookies
         /// </summary>
         public CookieCollection Cookies { get; set; }
@@ -38,6 +43,7 @@ namespace Project_GMCD_ConsoleEdition
         {
             TypePost = false;
             CreateWebRequestObject().Load(url);
+
             return Html.DocumentNode.InnerHtml;
         }
 
@@ -50,7 +56,19 @@ namespace Project_GMCD_ConsoleEdition
         {
             TypePost = true;
             CreateWebRequestObject().Load(url, "POST");
+
             return Html.DocumentNode.InnerHtml;
+        }
+
+        /// <summary>
+        /// Esse metodo captura o xpath do formulário
+        /// </summary>
+        /// <param name="xpath"> Xpath que será utilizado no metodo </param>
+        /// <returns></returns>
+        public string GetXpathForm(string xpath)
+        {
+            XpathForm = xpath;
+            return XpathForm;
         }
 
         /// <summary>
@@ -130,7 +148,7 @@ namespace Project_GMCD_ConsoleEdition
         private void SaveHtmlDocument(HtmlDocument document)
         {
             Html = document;
-            FormElements = new FormParseCollection(Html);
+            FormElements = new FormParseCollection(Html, XpathForm);
         }
 
         /// <summary>
@@ -149,10 +167,12 @@ namespace Project_GMCD_ConsoleEdition
         private HtmlWeb CreateWebRequestObject()
         {
             HtmlWeb web = new HtmlWeb();
+
             web.UseCookies = true;                                                          // Serve para utilizar cookie's
             web.PreRequest = new HtmlWeb.PreRequestHandler(PreRequest);                     // Faz o primeiro acesso para a captura do Html
             web.PostResponse = new HtmlWeb.PostResponseHandler(AfterResponse);              // Envia o formulário POST para o site
             web.PreHandleDocument = new HtmlWeb.PreHandleDocumentHandler(PreHandleDocument);// Recebe a página após o POST
+
             return web;
         }
     }

@@ -28,9 +28,17 @@ namespace Project_GMCD_ConsoleEdition
             {
                 case "checkbox":
                 case "radio":
-                    if (!ContainsKey(name)) Add(name, "");
+                    if (!ContainsKey(name))
+                    {
+                        Add(name, "");
+                    }
+
                     string isChecked = element.GetAttributeValue("checked", "unchecked");
-                    if (!isChecked.Equals("unchecked")) this[name] = value;
+
+                    if (!isChecked.Equals("unchecked"))
+                    { 
+                        this[name] = value;  
+                    }
                     break;
                 default:
                     Add(name, value);
@@ -82,31 +90,39 @@ namespace Project_GMCD_ConsoleEdition
         /// Construtor da classe. Esse constutor transfere os valores do POST para o campo especifico
         /// </summary>
         /// <param name="htmlDoc"></param>
-        public FormParseCollection(HtmlDocument htmlDoc)
+        public FormParseCollection(HtmlDocument htmlDoc, string xpathform)
         {
-            // Teste Select em um Form
-            var parseXpathForm = "//form[@id='frmConsulta']";
-            var form = htmlDoc.DocumentNode.SelectSingleNode(parseXpathForm);
+            // Passa o Xpath do form
+            var form = htmlDoc.DocumentNode.SelectSingleNode(xpathform);
 
             // Para Input
             var inputs = form.SelectNodes("./input");
-            foreach (var element in inputs)
+            if (inputs != null)
             {
-                AddInputElement(element);
+                foreach (var element in inputs)
+                {
+                    AddInputElement(element);
+                }
             }
 
             // Para ComboBox
-            var menus = htmlDoc.DocumentNode.Descendants("select");
-            foreach (var element in menus)
+            var menus = form.SelectNodes("select");
+            if (menus != null)
             {
-                AddMenuElement(element);
+                foreach (var element in menus)
+                {
+                    AddMenuElement(element);
+                }
             }
 
             // Para TextArea
-            var textareas = htmlDoc.DocumentNode.Descendants("textarea");
-            foreach (var element in textareas)
+            var textareas = form.SelectNodes("textarea");
+            if (textareas != null)
             {
-                AddTextareaElement(element);
+                foreach (var element in textareas)
+                {
+                    AddTextareaElement(element);
+                }
             }
         }
 
