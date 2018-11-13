@@ -3888,23 +3888,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\U6072189.TEN\\.nuget\\packages\\": {},
+    "C:\\Users\\snyp_\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\U6072189.TEN\\source\\repos\\Project GMCD_ConsoleEdition\\Project GMCD_ConsoleEdition\\Project GMCD_ConsoleEdition.csproj",
+      "projectUniqueName": "C:\\Users\\snyp_\\OneDrive\\Documents\\GitHub\\THB\\Project GMCD_ConsoleEdition\\Project GMCD_ConsoleEdition\\Project GMCD_ConsoleEdition.csproj",
       "projectName": "Project GMCD_ConsoleEdition",
-      "projectPath": "C:\\Users\\U6072189.TEN\\source\\repos\\Project GMCD_ConsoleEdition\\Project GMCD_ConsoleEdition\\Project GMCD_ConsoleEdition.csproj",
-      "packagesPath": "C:\\Users\\U6072189.TEN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\U6072189.TEN\\source\\repos\\Project GMCD_ConsoleEdition\\Project GMCD_ConsoleEdition\\obj\\",
+      "projectPath": "C:\\Users\\snyp_\\OneDrive\\Documents\\GitHub\\THB\\Project GMCD_ConsoleEdition\\Project GMCD_ConsoleEdition\\Project GMCD_ConsoleEdition.csproj",
+      "packagesPath": "C:\\Users\\snyp_\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\snyp_\\OneDrive\\Documents\\GitHub\\THB\\Project GMCD_ConsoleEdition\\Project GMCD_ConsoleEdition\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\U6072189.TEN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\snyp_\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3912,7 +3912,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://bams-amers-sami-api.int.thomsonreuters.com/artifactory/api/nuget/default.nuget.local": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

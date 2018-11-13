@@ -10,7 +10,7 @@ namespace Project_GMCD_ConsoleEdition
     class FormParseCollection : Dictionary<string, string>
     {
         /// <summary>
-        /// 
+        /// Adiciona o campo no Dictionary
         /// </summary>
         /// <param name="element"></param>
         private void AddInputElement(HtmlNode element)
